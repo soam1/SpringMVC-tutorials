@@ -46,6 +46,14 @@ public class HomeController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("name", "Akash Soam");
         modelAndView.addObject("roll", 3);
+        List<Integer> marks = new ArrayList<>();
+        marks.add(10);
+        marks.add(20);
+        marks.add(30);
+        modelAndView.addObject("marks", marks);
+
+
+
         modelAndView.setViewName("help");
         return modelAndView;
     }

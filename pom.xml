@@ -21,6 +21,21 @@
             <version>6.1.8</version>
         </dependency>
 
+<!--        https://mvnrepository.com/artifact/jstl/jstl-->
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
+        <dependency>
+        <groupId>jakarta.servlet.jsp.jstl</groupId>
+        <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+        <version>3.0.0</version>
+        </dependency>
+
     </dependencies>
     <build>
         <finalName>SpringMVC</finalName>
