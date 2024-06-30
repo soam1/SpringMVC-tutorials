@@ -10,9 +10,9 @@
 <body>
     <h1>Form Submission Successful!</h1>
     <p>Your form has been successfully submitted.</p>
-    <p>Full Name: ${name}</p>
-    <p>Email: ${email}</p>
-    <p>Password: ${password}</p>
+    <p>Full Name: ${user.name}</p>
+    <p>Email: ${user.email}</p>
+    <p>Password: ${user.password}</p>
     <p> try to secure your password bruh</p>
 </body>
 </html>
