@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!doctype html>
+<%@page isELIgnored="false"%>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -16,7 +17,10 @@
 
 
     <div class = "container mt-5">
+
     <form action= "processform" method= "post">
+    <h2 class = "text-center">${Header}</h2>
+
           <div class="form-group">
             <label for="exampleInputName1">Full Name</label>
             <input name="name" type="text" class="form-control" id="exampleInputName1" placeholder="Enter your name">

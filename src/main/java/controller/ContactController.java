@@ -4,14 +4,22 @@ import jakarta.servlet.http.HttpServletRequest;
 import model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ContactController {
+
+    @ModelAttribute
+    public void commonDataForModel(Model m) {
+        m.addAttribute("Header", "Learning Spring MVC");
+    }
+
     @RequestMapping("/contact")
-    public String showContactForm() {
+    public String showContactForm(Model m) {
+        m.addAttribute("Header", "Learning Spring MVC");
         return "contact";
     }
 
@@ -23,25 +31,12 @@ public class ContactController {
 //        System.out.println("Email: " + email);
 //        return "";
 //    }
-    public String handleForm(@RequestParam("name") String name, @RequestParam("email") String email, @RequestParam("password") String password, Model model) {
-//        System.out.println("Name: " + name);
-//        System.out.println("Email: " + email);
-//        System.out.println("Password: " + password);
-
-
-        User user = new User();
-        user.setEmail(email);
-        user.setName(name);
-        user.setPassword(password);
+    public String handleForm(@ModelAttribute User user, Model model) {
 
         System.out.println(user);
-
-        //processing the data
-//        model.addAttribute("name", name);
-//        model.addAttribute("email", email);
-//        model.addAttribute("password", password);
-
-        model.addAttribute("user", user);
+//        we dont even need model to pass the user object to the view
+//        model.addAttribute("user", user);
+        //bs model class ke attributes(variables)(User) ka nam match krna chahiye form ke input fields ke name se
         return "success";
     }
 }
